@@ -2,6 +2,9 @@ NAME := template
 
 INCS := include
 
+LDFLAGS :=
+LDLIBS :=
+
 SRC_DIR := src
 BUILD_DIR := .build
 
