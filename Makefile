@@ -1,9 +1,9 @@
 NAME := template
 
-INCS := include
-
 LDFLAGS :=
 LDLIBS :=
+
+INCS := include
 
 SRC_DIR := src
 BUILD_DIR := .build
@@ -34,7 +34,7 @@ $(NAME): $(BUILD_DIR) $(OBJS)
 	$(CXX) $(CXXFLAGS) $(CPPFLAGS) $(OBJS) -o $(NAME) $(LDFLAGS) $(LDLIBS)
 
 $(BUILD_DIR):
-	@mkdir -p $(BUILD_DIR)
+	@test -d $@ || mkdir -p $@
 
 $(BUILD_DIR)/%.o: $(SRC_DIR)/%.cpp
 	$(CXX) $(CXXFLAGS) $(CPPFLAGS) -c $< -o $@
